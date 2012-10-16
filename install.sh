@@ -57,7 +57,7 @@ install_rvm() {
             case $BREED in
                 
                 # ----------
-                "Ubuntu")
+                "Ubuntu"|"Debian")
                 # ----------
                     export DEBIAN_FRONTEND=noninteractive
                     
@@ -75,7 +75,7 @@ install_rvm() {
                     
                     ;; # end Ubuntu
                 # ----------
-		        "CentOS")
+		        "CentOS"|"RedHat")
                 # ----------
                     RELEASE="el$(lsb_release -rs | cut -c1)"
 
