@@ -3,46 +3,7 @@
 
 site 'http://community.opscode.com/api/v1'
 
-cookbook 'build-essential',
-  :git => 'https://github.com/opscode/cookbooks'
-cookbook 'couchdb',
-  :git => 'https://github.com/opscode/cookbooks'
-cookbook 'erlang',
-  :git => 'https://github.com/opscode/cookbooks'
 cookbook 'git',
   :git => 'https://github.com/opscode/cookbooks'
-cookbook 'nginx',
-  #:git => 'https://github.com/opscode/cookbooks'
-  # Switch to Dmytro's version of cookbook until pull request approved:
-  # https://github.com/cookbooks/nginx/pull/4
-  #
-  :git => 'git@github.com:dmytro/nginx.git'
-cookbook 'redis',
-  :git => 'https://github.com/scalarium/example-cookbooks'
-cookbook 'unicorn',
-  :git => 'https://github.com/opscode/cookbooks'
-cookbook 'wkhtmltopdf',
-  :git => 'https://github.com/Nextfave/cookbooks.git'
 cookbook 'rvm',
   :git => 'git://github.com/fnichol/chef-rvm.git'
-cookbook 'munin',
-   :git => 'git@github.com:dmytro/munin-solo.git'
-
-cookbook 'git_committer',
-   :git => 'git@github.com:dmytro/git_committer.git'
-cookbook 'github_keys',
-   :git => 'git@github.com:dmytro/github_keys.git'
-
-cookbook 'chef-solo-search',
-   :git => 'https://github.com/edelight/chef-solo-search.git'
-
-# cookbook 'chef-client'
-
-cookbook 'apache2', '>= 1.0.0'
-
-# cookbook 'rvm',
-#   :git => 'https://github.com/fnichol/chef-rvm'
-
-# cookbook 'postgresql',
-#   :git => 'https://github.com/findsyou/cookbooks',
-#   :ref => 'postgresql-improvements'
