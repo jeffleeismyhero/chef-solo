@@ -46,3 +46,6 @@ cookbook 'apache2', '>= 1.0.0'
 # cookbook 'postgresql',
 #   :git => 'https://github.com/findsyou/cookbooks',
 #   :ref => 'postgresql-improvements'
+
+cookbook 'chef-server',
+    :git => 'https://github.com/opscode-cookbooks/chef-server'
