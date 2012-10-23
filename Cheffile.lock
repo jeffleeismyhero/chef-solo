@@ -2,9 +2,22 @@ SITE
   remote: http://community.opscode.com/api/v1
   specs:
     apache2 (1.1.16)
+    apt (1.4.8)
     bluepill (1.1.0)
+    daemontools (1.0.0)
+      build-essential (>= 0.0.0)
+      ucspi-tcp (>= 0.0.0)
+    gecode (1.2.0)
+      apt (>= 0.0.0)
+      build-essential (>= 0.0.0)
+    java (1.6.0)
+    openssl (1.0.0)
     runit (0.15.0)
+    ucspi-tcp (1.0.0)
+      build-essential (>= 0)
+    xml (1.0.4)
     yum (0.8.2)
+    zlib (1.0.0)
 
 GIT
   remote: git://github.com/fnichol/chef-rvm.git
@@ -61,6 +74,24 @@ GIT
     chef-solo-search (0.4.0)
 
 GIT
+  remote: https://github.com/opscode-cookbooks/chef-server
+  ref: master
+  sha: b35a59de25371ec8caa96ff42047ca4a024af74d
+  specs:
+    chef-server (1.0.0)
+      apache2 (>= 0.0.0)
+      bluepill (>= 0.0.0)
+      couchdb (>= 0.0.0)
+      daemontools (>= 0.0.0)
+      gecode (>= 0.0.0)
+      java (>= 0.0.0)
+      nginx (>= 0.0.0)
+      openssl (>= 0.0.0)
+      runit (>= 0.0.0)
+      xml (>= 0.0.0)
+      zlib (>= 0.0.0)
+
+GIT
   remote: https://github.com/opscode/cookbooks
   ref: master
   sha: a5c066452e2ec73da20dc50e933177b31a1224bd
@@ -85,6 +116,7 @@ GIT
 DEPENDENCIES
   apache2 (>= 1.0.0)
   build-essential (>= 0)
+  chef-server (>= 0)
   chef-solo-search (>= 0)
   couchdb (>= 0)
   erlang (>= 0)

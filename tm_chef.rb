@@ -1,0 +1,4 @@
+{
+    "run_list": ["role[chef_server]"]
+}
+
