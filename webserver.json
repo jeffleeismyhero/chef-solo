@@ -1,9 +1,11 @@
 {
-	"dbuser": "vps",
-	"dbpass": "mypasswd",
+"postgresql": {
+    "password": {
+      "postgres": "md55b087fed9d72a7078941c1f7b49909ed"
+    }
+  },
 	"run_list": [ 
 		"role[web_server]",
-		"recipe[postgresql::server]",
-		"recipe[pope::default]"
+		"recipe[postgresql::server]"
 	]
 }

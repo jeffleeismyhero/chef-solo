@@ -23,11 +23,11 @@ cookbook 'rvm',
 ### 
 ### cookbook 'git_committer',
 ###    :git => 'git@github.com:dmytro/git_committer.git'
-### cookbook 'github_keys',
-###    :git => 'git@github.com:dmytro/github_keys.git'
-### 
-### cookbook 'chef-solo-search',
-###    :git => 'https://github.com/edelight/chef-solo-search.git'
+cookbook 'github_keys',
+   :git => 'git@github.com:dmytro/github_keys.git'
+
+cookbook 'chef-solo-search',
+   :git => 'https://github.com/edelight/chef-solo-search.git'
 ### 
 ### # cookbook 'chef-client'
 ### 
@@ -35,9 +35,6 @@ cookbook 'rvm',
 ### 
 ### cookbook 'apache2', '>= 1.0.0'
 ### 
-# cookbook 'rvm',
-#   :git => 'https://github.com/fnichol/chef-rvm'
-
 # cookbook 'postgresql',
 #   :git => 'https://github.com/findsyou/cookbooks',
 #   :ref => 'postgresql-improvements'

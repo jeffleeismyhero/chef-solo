@@ -70,7 +70,7 @@ install_rvm() {
                         curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 \
                         libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev \
                         ncurses-dev automake libtool bison subversion libgdbm-dev pkg-config \
-                        libffi-dev
+                        libffi-dev nodejs
                     
                     apt-get -y install libqt4-dev libqtwebkit-dev
                     
@@ -152,7 +152,8 @@ install_chef () {
 # End of functions. Start main part
 # --------------------------------------------------------------------------------
 
-test -f $chef_binary ||  install_rvm 
+#test -f $chef_binary ||  
+install_rvm 
 
 # TODO [ $(rvm --version 2>/dev/null | awk ' $1 ~ /rvm/ {print $2}') == ${RVM} ] || update_rvm
 install_ruby
