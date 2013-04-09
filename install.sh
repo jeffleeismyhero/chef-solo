@@ -10,9 +10,13 @@ BITS=$(uname -m)
 # Configuration: set required versions of rvm, ruby and chef
 # below. Install script will install or upgrade versions as required.
 # ----------------------------------------------------------------------
-RVM="1.19.0" 
+RVM="1.17.8" 
 RUBY="ruby-1.9.3-p392"
+#RUBY="ruby-1.9.3-p374"
+#CHEF="10.14.2"
+#CHEF="11.4.0"
 CHEF="10.24.0"
+#CHEF="10.16.2"
 # ----------------------------------------------------------------------
 # Config for CentOS
 #
@@ -131,7 +135,7 @@ install_ruby () {
     # rvm simply prints error and exits, so it's safe to run install
     # without checking.
     [[ -s $RVM ]] && source $RVM
-    rvm install ${RUBY}
+    rvm install ${RUBY} --autolibs=enable
     rvm use ${RUBY} --default
     
 }
@@ -152,8 +156,7 @@ install_chef () {
 # End of functions. Start main part
 # --------------------------------------------------------------------------------
 
-#test -f $chef_binary ||  
-install_rvm 
+test -f $chef_binary ||  install_rvm 
 
 # TODO [ $(rvm --version 2>/dev/null | awk ' $1 ~ /rvm/ {print $2}') == ${RVM} ] || update_rvm
 install_ruby
