@@ -6,17 +6,10 @@ json="${1}"
 OS=$(uname -s)
 BITS=$(uname -m)
 
-#
-# Configuration: set required versions of rvm, ruby and chef
-# below. Install script will install or upgrade versions as required.
-# ----------------------------------------------------------------------
-RVM="1.17.8" 
-RUBY="ruby-1.9.3-p392"
-#RUBY="ruby-1.9.3-p374"
-#CHEF="10.14.2"
-#CHEF="11.4.0"
-CHEF="10.24.0"
-#CHEF="10.16.2"
+# Source custom configuration from external file
+
+source install.conf
+
 # ----------------------------------------------------------------------
 # Config for CentOS
 #
