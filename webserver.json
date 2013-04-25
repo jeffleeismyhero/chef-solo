@@ -6,6 +6,7 @@
   },
 	"run_list": [ 
 		"role[web_server]",
+		"role[redis]",
 		"recipe[postgresql::server]"
 	]
 }
