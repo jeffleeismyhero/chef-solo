@@ -50,6 +50,13 @@ GIT
   specs:
     chef-solo-search (0.4.0)
 
+GIT
+  remote: https://github.com/scalarium/example-cookbooks
+  ref: master
+  sha: fa9053f2572b5e4992a207733780ccaa29ad07ff
+  specs:
+    redis (0.1.0)
+
 DEPENDENCIES
   build-essential (>= 0)
   chef-solo-search (>= 0)
@@ -57,6 +64,7 @@ DEPENDENCIES
   github_keys (>= 0)
   nginx (>= 0)
   postgresql (>= 0)
+  redis (>= 0)
   rvm (>= 0)
   unicorn (>= 0)
 

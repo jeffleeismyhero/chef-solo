@@ -10,6 +10,9 @@ cookbook 'nginx'
 cookbook 'unicorn'
 cookbook 'rvm',
   :git => 'git://github.com/fnichol/chef-rvm.git'
+
+cookbook 'redis',
+  :git => 'https://github.com/scalarium/example-cookbooks'
 ### ##
 ### # For Elasticsearch Java cookbook is requried
 ### #
