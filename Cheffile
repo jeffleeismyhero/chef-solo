@@ -8,11 +8,14 @@ cookbook 'postgresql'
 cookbook 'git'
 cookbook 'nginx'
 cookbook 'unicorn'
-cookbook 'rvm',
-  :git => 'git://github.com/fnichol/chef-rvm.git'
+cookbook 'rvm', git: 'git@github.com:fnichol/chef-rvm.git'
 
-cookbook 'redis',
-  :git => 'https://github.com/scalarium/example-cookbooks'
+##
+# Use this cookbook for Redis - configuration in roles[web-server] is
+# tuned for it. Other cookbooks need different configution. --dk
+#
+cookbook 'redis', git: 'git@github.com:dmytro/chef-redis.git'
+
 ### ##
 ### # For Elasticsearch Java cookbook is requried
 ### #
@@ -26,11 +29,13 @@ cookbook 'redis',
 ### 
 ### cookbook 'git_committer',
 ###    :git => 'git@github.com:dmytro/git_committer.git'
-cookbook 'github_keys',
-   :git => 'git@github.com:dmytro/github_keys.git'
+cookbook 'github_keys', git: 'git@github.com:dmytro/github_keys.git'
 
-cookbook 'chef-solo-search',
-   :git => 'https://github.com/edelight/chef-solo-search.git'
+##
+# chef-solo-search is cookbook that provides support for searchable
+# databags in Chef Solo
+cookbook 'chef-solo-search', git: 'https://github.com/edelight/chef-solo-search.git'
+
 ### 
 ### # cookbook 'chef-client'
 ### 

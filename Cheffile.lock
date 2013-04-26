@@ -29,12 +29,11 @@ SITE
     yum (2.2.0)
 
 GIT
-  remote: git://github.com/fnichol/chef-rvm.git
+  remote: git@github.com:dmytro/chef-redis.git
   ref: master
-  sha: 3ad80bc97c5cc7e4df3b001007a4deb3355beff5
+  sha: bd048ef4e397ab88edbb7974a9be3550c91eaf73
   specs:
-    rvm (0.9.1)
-      chef_gem (>= 0.0.0)
+    redis (0.0.4)
 
 GIT
   remote: git@github.com:dmytro/github_keys.git
@@ -44,18 +43,19 @@ GIT
     github_keys (0.0.1)
 
 GIT
+  remote: git@github.com:fnichol/chef-rvm.git
+  ref: master
+  sha: 08a06bc7c3c9fd0fb6b3a9b80f27bd74e109660c
+  specs:
+    rvm (0.9.1)
+      chef_gem (>= 0.0.0)
+
+GIT
   remote: https://github.com/edelight/chef-solo-search.git
   ref: master
   sha: 915792dcb9e2cfe59d7499a00e847dd824da7fda
   specs:
     chef-solo-search (0.4.0)
-
-GIT
-  remote: https://github.com/scalarium/example-cookbooks
-  ref: master
-  sha: fa9053f2572b5e4992a207733780ccaa29ad07ff
-  specs:
-    redis (0.1.0)
 
 DEPENDENCIES
   build-essential (>= 0)
