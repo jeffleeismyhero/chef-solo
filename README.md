@@ -50,6 +50,21 @@ To use librarian, after updating `Cheffile` file, run in the repository director
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
+Customizing chef-solo
+======================
+
+In order to be able to use same chef-solo repository with multiple custom setups place your configuration in `profiles` subdirectory.
+
+
+
+Integrating chef-solo with Capistrano
+============================================
+
+Bootstrapping
+======================
+
+Before using Chef on a server it is bootstrapped by install.sh script. Chapter below describes `install.sh` in more details.
+
 ## Supported by install.sh 
 
 ### OS's:
