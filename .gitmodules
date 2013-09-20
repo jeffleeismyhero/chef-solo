@@ -1,3 +1,0 @@
-[submodule "profiles/default"]
-	path = profiles/default
-	url = git@github.com:Coiney/coiney_chef_solo.git
