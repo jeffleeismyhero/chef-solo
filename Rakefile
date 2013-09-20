@@ -1,3 +1,3 @@
-Dir.glob("./lib/*.rake").each do |task|
-  require task
+Dir.glob("./lib/tasks/*.rake").each do |task|
+  import task
 end
