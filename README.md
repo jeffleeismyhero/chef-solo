@@ -60,6 +60,8 @@ In order to be able to use same chef-solo repository with multiple custom setups
 Integrating chef-solo with Capistrano
 ============================================
 
+TBD 
+
 Bootstrapping
 ======================
 
