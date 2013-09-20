@@ -9,3 +9,5 @@ tm-designer-dk.json
 chef-stacktrace.out
 doc
 .yardoc
+#
+# /profiles/*
