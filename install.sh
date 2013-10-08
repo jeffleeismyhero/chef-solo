@@ -62,6 +62,8 @@ bootstrap() {
     # Are we on a vanilla system?
     test $(installed) = 'yes' && { echo ">>>>>>>> RVM installed, don't bootstrap. "; return; }
 
+    echo '**** Boostrapping RVM on system ****'
+
     case ${OS} in
 
         "Darwin")
@@ -129,6 +131,17 @@ bootstrap() {
 
                     yum -y install bison gcc-c++ mhash mhash-devel mustang git 
 
+                    # ------------------------------------------------------------------
+                    # Install EPEL repo on CentOS/RedHat system - needed for LibYAML 
+                    # and other dependencies.
+                    # ------------------------------------------------------------------
+                    yum repolist | grep epel 2>&1 > /dev/null || ( \
+                        echo ' **** Install EPEL repository **** '
+                        wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+                        wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+                        sudo rpm -Uvh remi-release-6*.rpm epel-release-6*.rpm 
+                    )
+
                     ## NOTE: For centos >= 5.4 iconv-devel is provided by glibc
                     yum install -y gcc-c++ patch readline readline-devel zlib zlib-devel \
                         libyaml-devel libffi-devel openssl-devel make bzip2 autoconf \
@@ -148,6 +161,7 @@ bootstrap() {
             ;;
     esac
 }
+
 
 # ------------------------------------------------------------------
 #
@@ -212,14 +226,13 @@ update_rubygems () {
 # End of functions. Start main part
 # --------------------------------------------------------------------------------
 
-test -f ${chef_binary} ||  install_rvm
-
-bootstrap
-install_rvm
-install_ruby
-install_chef
-update_rubygems
-
+test -f ${chef_binary} || ( \   
+    bootstrap
+    install_rvm
+    install_ruby
+    install_chef
+    update_rubygems
+)
 #
 # Run chef-solo on server
 #
