@@ -13,7 +13,7 @@ current_host = ARGV[0].gsub(/\./,'_')
 exit unless current_host
 
 begin
-  roles =  Chef::DataBagItem.load(:roles_bag, current_host)["roles"]
+  roles =  Chef::DataBagItem.load(:node, current_host)["role"]
 rescue
   puts "Databag configuration for host #{ARGV[0]} not found"
   exit
@@ -23,7 +23,7 @@ end
 # atributes.
 run_lists = []
 roles.map{ |x| "#{ current_path}/#{x}.json"}.each do |role|
-  run_lists << JSON.parse(File.read role)["run_list"] if File.exists? role
+  run_lists += JSON.parse(File.read role)["run_list"] if File.exists? role
 end
 
 File.open("#{current_path}/#{current_host}.json", "w") do |f|
