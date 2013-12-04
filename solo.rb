@@ -16,6 +16,6 @@ file_cache_path root
 cookbook_path ["#{root}/cookbooks", "#{root}/site-cookbooks"]
 role_path     "#{root}/roles"
 data_bag_path "#{root}/data_bags"
-#log_level :info
-log_level :warn
+#Valid log_level's debug, info, warn, error, or fatal
+log_level :error
 log_location STDOUT
