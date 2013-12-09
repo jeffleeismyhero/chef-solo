@@ -233,6 +233,7 @@ test -f ${chef_binary} || ( \
     install_chef
     update_rubygems
 )
+test "$json" = "empty.json" && exit
 #
 # Run chef-solo on server
 #
