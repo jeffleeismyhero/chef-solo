@@ -17,5 +17,5 @@ cookbook_path ["#{root}/cookbooks", "#{root}/site-cookbooks"]
 role_path     "#{root}/roles"
 data_bag_path "#{root}/data_bags"
 #Valid log_level's debug, info, warn, error, or fatal
-log_level :error
+log_level :fatal
 log_location STDOUT
