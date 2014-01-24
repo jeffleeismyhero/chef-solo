@@ -13,7 +13,8 @@ current_host = ARGV[0].gsub(/\./,'_')
 exit unless current_host
 
 begin
-  roles =  Chef::DataBagItem.load(:node, current_host)["role"]
+  node = Chef::DataBagItem.load(:node, current_host)
+  roles =  node["role"]
 rescue
   puts "Databag configuration for host #{ARGV[0]} not found"
   exit
@@ -27,7 +28,14 @@ roles.map{ |x| "#{ current_path}/#{x}.json"}.each do |role|
 end
 
 File.open("#{current_path}/#{current_host}.json", "w") do |f|
-  f.print({ run_list: run_lists.compact.uniq }.to_json)
+  f.print({
+            run_list: run_lists.compact.uniq, # Run list for the host
+            net: {   # Generate networking infor for hostname cookbook
+              hostname: node["hostname"] ,
+              FQDN:     node["fqdn"],
+              IP:       node["ipaddress"]
+            }
+          }.to_json)
 end
 
 cmd = "cd #{current_path} && chef-solo --config solo.rb --json-attributes #{current_host}.json"
