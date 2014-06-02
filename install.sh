@@ -41,7 +41,7 @@ else
 fi
 
 # ------------------------------------------------------------------
-# Check whether RVM installed.  
+# Check whether RVM installed.
 #
 # TODO: need a better way, when running with sudo `which rvm` doesn't
 # work.
@@ -146,7 +146,7 @@ bootstrap() {
                     yum install -y gcc-c++ patch readline readline-devel zlib zlib-devel \
                         libyaml-devel libffi-devel openssl-devel make bzip2 autoconf \
                         automake libtool bison iconv-devel mysql-devel sqlite-devel
-                    
+                  
                     ;; # end CentOS
 
 
@@ -219,7 +219,7 @@ update_rubygems () {
             gem update --system ${RUBYGEMS};                   # See KNOWN_PROBLEMS #1
             gem install --no-rdoc --no-ri json --version=1.7.7 # See KNOWN_PROBLEMS #2
         fi
-    fi    
+    fi  
 }
 
 # --------------------------------------------------------------------------------
